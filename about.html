@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О проекте — DonGuide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo">
+          <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#1a4f8a"/><path d="M10 28 Q15 22 20 26 Q25 30 30 24" stroke="#f5a623" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M13 22 Q16 16 20 18 Q24 20 27 16" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="20" cy="13" r="3.5" fill="#f5a623"/><path d="M20 16.5 L20 20" stroke="#f5a623" stroke-width="1.5"/></svg>
+          <span class="logo__text">Don<span class="logo__accent">Guide</span></span>
+        </a>
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Главная</a>
+          <a href="quiz.html" class="nav__link">Маршрут</a>
+          <a href="catalog.html" class="nav__link">Каталог</a>
+          <a href="about.html" class="nav__link nav__link--active">О проекте</a>
+          <a href="quiz.html" class="btn btn--amber btn--sm">Начать</a>
+        </nav>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="page-about">
+    <section class="hero" style="min-height:50vh; padding-top: var(--header-h);">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1768917269363-de1b3d12db70?w=1920&q=85" alt="Ростов-на-Дону" loading="eager"/>
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="container hero__container" style="min-height:calc(50vh - var(--header-h))">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#f5a623" stroke-width="1.5"/><circle cx="7" cy="7" r="2.5" fill="#f5a623"/></svg>
+            О проекте
+          </div>
+          <h1 class="hero__title" style="font-size:clamp(32px,5vw,56px)">DonGuide —<br/><span class="hero__title-accent">твой гид</span><br/>по Ростову</h1>
+          <p class="hero__subtitle">Мы создаём персональные маршруты, чтобы каждый мог открыть город по-новому</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Наша миссия</div>
+          <h2 class="section-title">Зачем мы это делаем?</h2>
+          <p class="section-subtitle">Ростов-на-Дону — живой, разнообразный город. Мы хотим помочь вам увидеть его лучшие стороны</p>
+        </div>
+        <div class="features__grid about-grid">
+          <div class="feature-card feature-card--1">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C11.582 4 8 7.582 8 12C8 18.5 16 28 16 28C16 28 24 18.5 24 12C24 7.582 20.418 4 16 4Z" fill="#1a4f8a"/><circle cx="16" cy="12" r="3.5" fill="white"/></svg>
+            </div>
+            <div class="feature-card__num">01</div>
+            <h3 class="feature-card__title">120+ локаций</h3>
+            <p class="feature-card__text">Мы собрали и проверили более 120 мест города: от известных достопримечательностей до скрытых жемчужин, о которых знают только местные.</p>
+          </div>
+          <div class="feature-card feature-card--2">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" fill="#e8f0fa"/><path d="M10 16L14 20L22 12" stroke="#1a4f8a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="feature-card__num">02</div>
+            <h3 class="feature-card__title">Умный алгоритм</h3>
+            <p class="feature-card__text">Наш алгоритм учитывает ваши интересы, бюджет и время — и строит оптимальный маршрут, чтобы вы успели увидеть максимум.</p>
+          </div>
+          <div class="feature-card feature-card--3">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 6H24V26H8V6Z" rx="2" fill="#e8f0fa"/><rect x="8" y="6" width="16" height="20" rx="2" fill="#e8f0fa" stroke="#1a4f8a" stroke-width="1.5"/><path d="M12 12H20M12 16H20M12 20H17" stroke="#1a4f8a" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="feature-card__num">03</div>
+            <h3 class="feature-card__title">Бесплатно</h3>
+            <p class="feature-card__text">DonGuide полностью бесплатен. Мы верим, что доступ к качественному путеводителю должен быть у каждого, вне зависимости от бюджета.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Команда</div>
+          <h2 class="section-title">Кто за этим стоит?</h2>
+          <p class="section-subtitle">Небольшая команда энтузиастов, влюблённых в Ростов</p>
+        </div>
+        <div class="features__grid about-grid">
+          <div class="feature-card">
+            <div class="feature-card__icon" style="background:var(--blue-xlight)">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" fill="#1a4f8a"/><path d="M6 26C6 21.582 10.477 18 16 18C21.523 18 26 21.582 26 26" stroke="#1a4f8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Алексей Донской</h3>
+            <p class="feature-card__text">Основатель проекта. Путешественник и любитель городской истории. Мечтал о таком гиде по Ростову ещё студентом.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon" style="background:var(--blue-xlight)">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" fill="#1a4f8a"/><path d="M6 26C6 21.582 10.477 18 16 18C21.523 18 26 21.582 26 26" stroke="#1a4f8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Мария Степанова</h3>
+            <p class="feature-card__text">Главный редактор. Местный краевед с 10-летним опытом. Лично проверила каждую из 120+ локаций и составила описания.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon" style="background:var(--blue-xlight)">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" fill="#1a4f8a"/><path d="M6 26C6 21.582 10.477 18 16 18C21.523 18 26 21.582 26 26" stroke="#1a4f8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Иван Котов</h3>
+            <p class="feature-card__text">Разработчик. Написал алгоритм подбора маршрутов и всю техническую часть. Убеждён, что технологии делают жизнь лучше.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner section">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="cta-banner__content">
+            <h2 class="cta-banner__title">Готовы исследовать Ростов?</h2>
+            <p class="cta-banner__text">Пройдите короткий квиз и получите персональный маршрут на весь день</p>
+            <a class="btn btn--amber btn--lg" href="quiz.html">Подобрать маршрут бесплатно</a>
+          </div>
+          <div class="cta-banner__img">
+            <img src="https://images.unsplash.com/photo-1768917269363-de1b3d12db70?w=600&q=80" alt="Левый берег Дона"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#1a4f8a"/><path d="M10 28 Q15 22 20 26 Q25 30 30 24" stroke="#f5a623" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M13 22 Q16 16 20 18 Q24 20 27 16" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="20" cy="13" r="3.5" fill="#f5a623"/><path d="M20 16.5 L20 20" stroke="#f5a623" stroke-width="1.5"/></svg>
+            <span class="logo__text">Don<span class="logo__accent">Guide</span></span>
+          </a>
+          <p class="footer__desc">Умный сервис для подбора туристических маршрутов по Ростову-на-Дону</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Сервис</h4>
+            <a href="quiz.html">Подобрать маршрут</a>
+            <a href="catalog.html">Каталог мест</a>
+            <a href="about.html">О проекте</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Контакты</h4>
+            <a href="mailto:hello@donguide.ru">hello@donguide.ru</a>
+            <a href="#">Поддержка</a>
+            <a href="#">Партнёрам</a>
+          </div>
+        </div>
+      </div>
+            <div class="footer__bottom">
+        <span>© 2026 DonGuide. Все права защищены.</span>
+        <span>Ростов-на-Дону</span>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+  });
+  </script>
+</body>
+</html>

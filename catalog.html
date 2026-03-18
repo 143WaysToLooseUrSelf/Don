@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Каталог мест — DonGuide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo">
+          <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#1a4f8a"/><path d="M10 28 Q15 22 20 26 Q25 30 30 24" stroke="#f5a623" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M13 22 Q16 16 20 18 Q24 20 27 16" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="20" cy="13" r="3.5" fill="#f5a623"/><path d="M20 16.5 L20 20" stroke="#f5a623" stroke-width="1.5"/></svg>
+          <span class="logo__text">Don<span class="logo__accent">Guide</span></span>
+        </a>
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Главная</a>
+          <a href="quiz.html" class="nav__link">Маршрут</a>
+          <a href="catalog.html" class="nav__link nav__link--active">Каталог</a>
+          <a href="about.html" class="nav__link">О проекте</a>
+          <a href="quiz.html" class="btn btn--amber btn--sm">Начать</a>
+        </nav>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="page-catalog">
+
+<div class="catalog-page">
+      <div class="catalog-hero">
+        <div class="container">
+          <h1 class="catalog-hero__title">Каталог мест Ростова</h1>
+          <p class="catalog-hero__subtitle">120+ достопримечательностей, ресторанов и парков города</p>
+        </div>
+      </div>
+
+      <div class="catalog-controls">
+        <div class="container">
+          <div class="catalog-controls__inner">
+            <div class="search-bar">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke="#7a8499" stroke-width="1.5"/><path d="M13.5 13.5L18 18" stroke="#7a8499" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <input type="text" placeholder="Поиск мест..." id="search-input" oninput="filterCatalog()" />
+              <button class="search-bar__clear" onclick="clearSearch()" id="search-clear" style="display:none">✕</button>
+            </div>
+            <div class="filter-tabs" id="filter-tabs">
+              <button class="filter-tab active" data-filter="all" onclick="setFilter(this)">Все</button>
+              <button class="filter-tab" data-filter="architecture" onclick="setFilter(this)">Архитектура</button>
+              <button class="filter-tab" data-filter="parks" onclick="setFilter(this)">Парки</button>
+              <button class="filter-tab" data-filter="gastronomy" onclick="setFilter(this)">Гастрономия</button>
+              <button class="filter-tab" data-filter="museums" onclick="setFilter(this)">Музеи</button>
+              <button class="filter-tab" data-filter="entertainment" onclick="setFilter(this)">Развлечения</button>
+            </div>
+          </div>
+          <div class="catalog-meta">
+            <span id="catalog-count">Найдено: 12 мест</span>
+            <div class="catalog-sort">
+              <label>Сортировать:</label>
+              <select onchange="sortCatalog(this.value)">
+                <option value="popular">По популярности</option>
+                <option value="rating">По рейтингу</option>
+                <option value="name">По названию</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="catalog-grid" id="catalog-grid">
+
+          <div class="catalog-card" data-category="architecture" data-name="Покровский собор" data-rating="4.9">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1565161934554-44ab1400ac6e?w=500&q=80" alt="Покровский собор" loading="lazy"/>
+              <button class="fav-btn" data-id="1" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge">Архитектура</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.9 <span>(812 отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Покровский собор</h3>
+              <p class="catalog-card__desc">Один из старейших православных храмов Ростова-на-Дону, памятник архитектуры XVIII века</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__free">Бесплатно</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="parks" data-name="Набережная Дона" data-rating="4.9">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1764726197462-60f0b2cbd95c?w=500&q=80" alt="Набережная Дона" loading="lazy"/>
+              <button class="fav-btn" data-id="2" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--green">Парки</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.9 <span>(3.4k отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Набережная Дона</h3>
+              <p class="catalog-card__desc">Главная прогулочная зона Ростова с видом на реку, причалами и ресторанами</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__free">Бесплатно</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="entertainment" data-name="Левый берег Дона" data-rating="4.7">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1768917269363-de1b3d12db70?w=500&q=80" alt="Левый берег Дона" loading="lazy"/>
+              <button class="fav-btn" data-id="3" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--amber">Развлечения</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.7 <span>(2.1k отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Левый берег Дона</h3>
+              <p class="catalog-card__desc">Пляжная зона с ресторанами, барами, развлечениями и великолепными закатами</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__free">Бесплатно</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="parks" data-name="Парк Горького" data-rating="4.8">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1714422794298-3984056a8cd2?w=500&q=80" alt="Парк Горького" loading="lazy"/>
+              <button class="fav-btn" data-id="4" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--green">Парки</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.8 <span>(1.8k отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Парк им. Горького</h3>
+              <p class="catalog-card__desc">Главный парк Ростова с аттракционами, кафе, фонтанами и театром</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__free">Бесплатно</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="gastronomy" data-name="Центральный рынок" data-rating="4.6">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1759299710327-916e9a1d1de9?w=500&q=80" alt="Центральный рынок" loading="lazy"/>
+              <button class="fav-btn" data-id="5" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--red">Гастрономия</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.6 <span>(956 отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Центральный рынок</h3>
+              <p class="catalog-card__desc">Колоритный городской рынок с донскими деликатесами, рыбой и специями</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__paid">Вход свободный</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="gastronomy" data-name="Ресторанный квартал" data-rating="4.7">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1677523875460-7be7f031a302?w=500&q=80" alt="Ресторанный квартал" loading="lazy"/>
+              <button class="fav-btn" data-id="6" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--red">Гастрономия</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.7 <span>(1.2k отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Ресторанный квартал</h3>
+              <p class="catalog-card__desc">Лучшие рестораны донской кухни в историческом квартале Ростова</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__paid">от 800₽</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="architecture" data-name="Театральная площадь" data-rating="4.8">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1759684741262-0ed6610f11fe?w=500&q=80" alt="Театральная площадь" loading="lazy"/>
+              <button class="fav-btn" data-id="7" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge">Архитектура</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.8 <span>(2.3k отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Театральная площадь</h3>
+              <p class="catalog-card__desc">Центральная площадь с Театром драмы и памятником основателям города</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__free">Бесплатно</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="museums" data-name="Музей" data-rating="4.7">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1765432205510-57247a320c58?w=500&q=80" alt="Музей" loading="lazy"/>
+              <button class="fav-btn" data-id="8" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--purple">Музеи</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.7 <span>(680 отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Музей</h3>
+              <p class="catalog-card__desc">Богатейшая коллекция живописи и скульптуры от классики до современного искусства</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__paid">от 200₽</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="architecture" data-name="Старый Ростов" data-rating="4.5">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1772012454113-158fdbb9eaac?w=500&q=80" alt="Исторический центр" loading="lazy"/>
+              <button class="fav-btn" data-id="9" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge">Архитектура</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.5 <span>(540 отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Исторический квартал</h3>
+              <p class="catalog-card__desc">Особняки XIX–XX вв., мощёные улицы и дореволюционная атмосфера старого Ростова</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__free">Бесплатно</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="museums" data-name="Краеведческий музей" data-rating="4.6">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1765432205510-57247a320c58?w=500&q=80" alt="Краеведческий музей" loading="lazy" style="filter:hue-rotate(30deg)"/>
+              <button class="fav-btn" data-id="10" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--purple">Музеи</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.6 <span>(430 отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Краеведческий музей</h3>
+              <p class="catalog-card__desc">История донского края от древних скифов до современности с уникальными экспонатами</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__paid">от 150₽</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="entertainment" data-name="Зоопарк Ростова" data-rating="4.5">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1714422794298-3984056a8cd2?w=500&q=80" alt="Зоопарк" loading="lazy" style="filter:saturate(1.3)"/>
+              <button class="fav-btn" data-id="11" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--amber">Развлечения</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.5 <span>(2.6k отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Зоопарк Ростова</h3>
+              <p class="catalog-card__desc">Один из крупнейших зоопарков юга России с редкими животными и прекрасными садами</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__paid">от 300₽</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-category="parks" data-name="Ботанический сад" data-rating="4.8">
+            <div class="catalog-card__img">
+              <img src="https://images.unsplash.com/photo-1714422794298-3984056a8cd2?w=500&q=80" alt="Ботанический сад" loading="lazy" style="filter:hue-rotate(-10deg) brightness(1.1)"/>
+              <button class="fav-btn" data-id="12" onclick="toggleFav(this)" title="В избранное">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17S2 12 2 6.5A4.5 4.5 0 0 1 10 4.06 4.5 4.5 0 0 1 18 6.5C18 12 10 17 10 17Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="catalog-card__cat-badge catalog-card__cat-badge--green">Парки</div>
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__rating">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L8.55 5.2L12.5 5.6L9.6 8.1L10.5 12L7 9.9L3.5 12L4.4 8.1L1.5 5.6L5.45 5.2L7 1.5Z" fill="#f5a623"/></svg>
+                4.8 <span>(760 отзывов)</span>
+              </div>
+              <h3 class="catalog-card__title">Ботанический сад ЮФУ</h3>
+              <p class="catalog-card__desc">Огромный ботанический сад с тысячами видов растений, оранжереями и прогулочными аллеями</p>
+              <div class="catalog-card__footer">
+                <span class="catalog-card__paid">от 100₽</span>
+                <a class="btn btn--blue btn--sm" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="catalog-load-more">
+          <button class="btn btn--outline btn--md" onclick="loadMore()">
+            Загрузить ещё
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3V15M9 15L5 11M9 15L13 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#1a4f8a"/><path d="M10 28 Q15 22 20 26 Q25 30 30 24" stroke="#f5a623" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M13 22 Q16 16 20 18 Q24 20 27 16" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="20" cy="13" r="3.5" fill="#f5a623"/><path d="M20 16.5 L20 20" stroke="#f5a623" stroke-width="1.5"/></svg>
+            <span class="logo__text">Don<span class="logo__accent">Guide</span></span>
+          </a>
+          <p class="footer__desc">Умный сервис для подбора туристических маршрутов по Ростову-на-Дону</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Сервис</h4>
+            <a href="quiz.html">Подобрать маршрут</a>
+            <a href="catalog.html">Каталог мест</a>
+            <a href="about.html">О проекте</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Контакты</h4>
+            <a href="mailto:hello@donguide.ru">hello@donguide.ru</a>
+            <a href="#">Поддержка</a>
+            <a href="#">Партнёрам</a>
+          </div>
+        </div>
+      </div>
+            <div class="footer__bottom">
+        <span>© 2026 DonGuide. Все права защищены.</span>
+        <span>Ростов-на-Дону</span>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+    initCatalog();
+  });
+  </script>
+</body>
+</html>
