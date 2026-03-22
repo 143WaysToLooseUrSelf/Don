@@ -83,119 +83,15 @@
       <div class="result-content">
         <div class="container">
           <div class="result-layout">
-            <!-- Map -->
             <div class="result-map">
               <div class="result-map__header">
                 <h3>Карта маршрута</h3>
-                <div class="result-map__controls">
-                  <button class="map-btn" title="Увеличить">+</button>
-                  <button class="map-btn" title="Уменьшить">−</button>
-                  <button class="map-btn map-btn--full" title="На весь экран">⤢</button>
-                </div>
               </div>
-              <div class="result-map__wrap">
-                <svg class="city-map" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-                  <!-- Map background -->
-                  <rect width="560" height="420" fill="#f0ebe1"/>
-                  <!-- City blocks (random fills for urban texture) -->
-                  <rect x="30" y="20" width="70" height="45" rx="2" fill="#e0d8cc"/>
-                  <rect x="110" y="20" width="55" height="45" rx="2" fill="#e0d8cc"/>
-                  <rect x="175" y="20" width="80" height="45" rx="2" fill="#e0d8cc"/>
-                  <rect x="265" y="20" width="65" height="45" rx="2" fill="#e0d8cc"/>
-                  <rect x="340" y="20" width="90" height="45" rx="2" fill="#e0d8cc"/>
-                  <rect x="440" y="20" width="80" height="45" rx="2" fill="#e0d8cc"/>
-                  <rect x="30" y="80" width="55" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="95" y="80" width="70" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="175" y="80" width="50" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="235" y="80" width="80" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="325" y="80" width="55" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="390" y="80" width="65" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="465" y="80" width="55" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="30" y="145" width="80" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="120" y="145" width="55" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="185" y="145" width="70" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="265" y="145" width="60" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="335" y="145" width="80" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="425" y="145" width="95" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="30" y="210" width="60" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="100" y="210" width="80" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="190" y="210" width="55" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="255" y="210" width="85" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="350" y="210" width="60" height="50" rx="2" fill="#e0d8cc"/>
-                  <rect x="420" y="210" width="100" height="50" rx="2" fill="#e0d8cc"/>
-                  <!-- Streets (horizontal) -->
-                  <rect x="0" y="66" width="560" height="11" fill="#f8f5ef"/>
-                  <rect x="0" y="131" width="560" height="11" fill="#f8f5ef"/>
-                  <rect x="0" y="196" width="560" height="11" fill="#f8f5ef"/>
-                  <rect x="0" y="261" width="560" height="14" fill="#f8f5ef"/>
-                  <!-- Streets (vertical) -->
-                  <rect x="26" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <rect x="100" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <rect x="165" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <rect x="230" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <rect x="320" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <rect x="414" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <rect x="519" y="0" width="9" height="280" fill="#f8f5ef"/>
-                  <!-- Street labels -->
-                  <text x="38" y="62" font-size="7" fill="#999" font-family="sans-serif">ул. Большая Садовая</text>
-                  <text x="38" y="127" font-size="7" fill="#999" font-family="sans-serif">ул. Пушкинская</text>
-                  <text x="38" y="192" font-size="7" fill="#999" font-family="sans-serif">ул. Социалистическая</text>
-                  <!-- Parks -->
-                  <rect x="340" y="148" width="70" height="47" rx="3" fill="#c8e6c0" opacity="0.9"/>
-                  <text x="357" y="176" font-size="7.5" fill="#4a7a40" font-family="sans-serif" font-weight="600">Парк Горького</text>
-                  <rect x="190" y="213" width="52" height="47" rx="3" fill="#c8e6c0" opacity="0.9"/>
-                  <text x="196" y="238" font-size="6.5" fill="#4a7a40" font-family="sans-serif">Пионерский</text>
-                  <!-- Don River -->
-                  <path d="M0 290 Q40 278 80 285 Q120 292 160 280 Q200 268 240 278 Q280 288 320 276 Q360 264 400 274 Q440 284 480 272 Q510 265 560 270 L560 420 L0 420 Z" fill="#a8c8e8" opacity="0.9"/>
-                  <path d="M0 295 Q40 283 80 290 Q120 297 160 285 Q200 273 240 283 Q280 293 320 281 Q360 269 400 279 Q440 289 480 277 Q510 270 560 275" stroke="#7aafd4" stroke-width="1.5" fill="none"/>
-                  <text x="220" y="340" font-size="13" fill="#5a9abd" font-family="sans-serif" font-weight="700" opacity="0.8">р е к а   Д о н</text>
-                  <!-- Left Bank -->
-                  <rect x="0" y="360" width="560" height="60" fill="#d4e8c2" opacity="0.6"/>
-                  <text x="210" y="395" font-size="10" fill="#5a8a40" font-family="sans-serif" font-weight="600" opacity="0.7">Левый берег</text>
-                  <!-- Route path -->
-                  <path d="M423 35 L234 43 L104 90 L235 170 L309 240 L174 245 L105 310" stroke="#f5a623" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-                  <!-- Stop markers -->
-                  <circle cx="423" cy="35" r="10" fill="#1a4f8a" stroke="white" stroke-width="2"/>
-                  <text x="423" y="39" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">1</text>
-                  <circle cx="234" cy="43" r="10" fill="#1a4f8a" stroke="white" stroke-width="2"/>
-                  <text x="234" y="47" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">2</text>
-                  <circle cx="104" cy="90" r="10" fill="#1a4f8a" stroke="white" stroke-width="2"/>
-                  <text x="104" y="94" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">3</text>
-                  <circle cx="235" cy="170" r="10" fill="#1a4f8a" stroke="white" stroke-width="2"/>
-                  <text x="235" y="174" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">4</text>
-                  <circle cx="309" cy="240" r="10" fill="#f5a623" stroke="white" stroke-width="2"/>
-                  <text x="309" y="244" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">5</text>
-                  <circle cx="174" cy="245" r="10" fill="#1a4f8a" stroke="white" stroke-width="2"/>
-                  <text x="174" y="249" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">6</text>
-                  <circle cx="105" cy="310" r="10" fill="#1a4f8a" stroke="white" stroke-width="2"/>
-                  <text x="105" y="314" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="sans-serif">7</text>
-                  <!-- Stop labels -->
-                  <rect x="434" y="26" width="68" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="468" y="39" text-anchor="middle" font-size="8" fill="#2d3142" font-family="sans-serif">Ж/Д Вокзал</text>
-                  <rect x="245" y="34" width="80" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="285" y="47" text-anchor="middle" font-size="8" fill="#2d3142" font-family="sans-serif">Театральная пл.</text>
-                  <rect x="56" y="81" width="88" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="100" y="94" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">Покровский</text>
-                  <rect x="57" y="81" width="90" height="18" rx="4" fill="rgba(0,0,0,0.5)"/>
-                  <text x="102" y="94" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">Покровский собор</text>
-                  <rect x="246" y="161" width="72" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="282" y="174" text-anchor="middle" font-size="8" fill="#2d3142" font-family="sans-serif">Центр. рынок</text>
-                  <rect x="320" y="231" width="70" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="355" y="244" text-anchor="middle" font-size="8" fill="#2d3142" font-family="sans-serif">Парк Горького</text>
-                  <rect x="116" y="236" width="68" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="150" y="249" text-anchor="middle" font-size="8" fill="#2d3142" font-family="sans-serif">Набережная</text>
-                  <rect x="55" y="301" width="70" height="18" rx="4" fill="white" opacity="0.9"/>
-                  <text x="90" y="314" text-anchor="middle" font-size="8" fill="#2d3142" font-family="sans-serif">Левый берег</text>
-                </svg>
-              </div>
-              <div class="result-map__legend">
-                <div class="legend-item"><span class="legend-dot legend-dot--blue"></span>Остановка</div>
-                <div class="legend-item"><span class="legend-dot legend-dot--amber"></span>Ключевая точка</div>
-                <div class="legend-item"><span class="legend-line"></span>Маршрут</div>
+              <div class="result-map__wrap" style="height:460px;">
+                <div id="yandex-map" style="width:100%;height:460px;"></div>
               </div>
             </div>
 
-            <!-- Route Timeline -->
             <div class="result-timeline">
               <div class="timeline-header">
                 <h3>Расписание маршрута</h3>
@@ -209,7 +105,7 @@
                   </div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1759684741262-0ed6610f11fe?w=400&q=80" alt="Ж/Д Вокзал" loading="lazy"/>
+                      <img src="img/jd.jpg" alt="Ж/Д Вокзал" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -230,7 +126,7 @@
                   <div class="timeline-marker"><span>2</span></div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1772012454113-158fdbb9eaac?w=400&q=80" alt="Театральная площадь" loading="lazy"/>
+                      <img src="img/teatral.jpg" alt="Театральная площадь" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -251,7 +147,7 @@
                   <div class="timeline-marker"><span>3</span></div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1565161934554-44ab1400ac6e?w=400&q=80" alt="Покровский собор" loading="lazy"/>
+                      <img src="img/teatral.jpg" alt="Покровский собор" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -272,7 +168,7 @@
                   <div class="timeline-marker"><span>4</span></div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1759299710327-916e9a1d1de9?w=400&q=80" alt="Центральный рынок" loading="lazy"/>
+                      <img src="img/cr.jpg" alt="Центральный рынок" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -293,7 +189,7 @@
                   <div class="timeline-marker timeline-marker--amber"><span>5</span></div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1714422794298-3984056a8cd2?w=400&q=80" alt="Парк Горького" loading="lazy"/>
+                      <img src="img/parkgorkogo.jpg" alt="Парк Горького" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -314,7 +210,7 @@
                   <div class="timeline-marker"><span>6</span></div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1764726197462-60f0b2cbd95c?w=400&q=80" alt="Набережная Дона" loading="lazy"/>
+                      <img src="img/naberezshnaya.jpg" alt="Набережная Дона" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -335,7 +231,7 @@
                   <div class="timeline-marker timeline-marker--end"><span>7</span></div>
                   <div class="timeline-card">
                     <div class="timeline-card__img">
-                      <img src="https://images.unsplash.com/photo-1768917269363-de1b3d12db70?w=400&q=80" alt="Левый берег" loading="lazy"/>
+                      <img src="img/levbereg.jpg" alt="Левый берег" loading="lazy"/>
                     </div>
                     <div class="timeline-card__body">
                       <div class="timeline-card__time">
@@ -363,6 +259,8 @@
       </div>
     </div>
 
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
@@ -388,18 +286,329 @@
           </div>
         </div>
       </div>
-            <div class="footer__bottom">
+      <div class="footer__bottom">
         <span>© 2026 DonGuide. Все права защищены.</span>
         <span>Ростов-на-Дону</span>
       </div>
     </div>
   </footer>
-  </main>
 
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=1a184ee4-6dd9-4b39-9c17-65808bb7277d&lang=ru_RU" type="text/javascript"></script>
   <script src="main.js"></script>
   <script>
+
+  /* база маршрутов*/
+  const ROUTES = {
+
+    architecture: {
+      title: 'Архитектурный маршрут',
+      duration: '5–6 часов',
+      places: 6,
+      km: '3.8 км',
+      points: [
+        { coords: [47.217099, 39.694258], name: 'Железнодорожный вокзал',          time: '09:00–09:30', desc: 'Величественный вокзал — образец советского ампира. Отправная точка маршрута.', tip: 'Сфотографируйте главный фасад — лучшее освещение с утра' },
+        { coords: [47.226778, 39.745223], name: 'Театральная площадь',             time: '10:00–11:00', desc: 'Центральная площадь с Театром драмы и памятником основателям города.', tip: 'Обратите внимание на здание театра — образец конструктивизма' },
+        { coords: [47.225830, 39.732110], name: 'Покровский собор',                time: '11:30–12:30', desc: 'Один из старейших православных храмов города — памятник архитектуры XVIII века.', tip: 'Посещение бесплатно, вход со стороны улицы Станиславского' },
+        { coords: [47.225903, 39.719046], name: 'Улица Пушкинская',               time: '13:00–14:00', desc: 'Главная пешеходная улица Ростова с дореволюционными особняками и бульваром.', tip: 'Прогуляйтесь по бульвару — здесь много кафе для обеда' },
+        { coords: [47.219251, 39.702239], name: 'Особняк Маргариты Черновой',     time: '14:30–15:00', desc: 'Роскошный доходный дом начала XX века — визитная карточка ростовского модерна.', tip: 'Загляните во внутренний двор' },
+        { coords: [47.217090, 39.726840], name: 'Набережная Дона',                time: '15:30–17:00', desc: 'Живописная набережная с видом на реку и историческими постройками.', tip: 'Здесь отличный вид на закат над Доном' },
+      ]
+    },
+
+    parks: {
+      title: 'Зелёный маршрут',
+      duration: '4–5 часов',
+      places: 4,
+      km: '4.2 км',
+      points: [
+        { coords: [47.221248, 39.710246], name: 'Парк имени Горького',            time: '09:00–10:30', desc: 'Главный парк Ростова с вековыми деревьями, фонтанами и летним театром.', tip: 'По утрам здесь тихо и приятно — лучшее время для прогулки' },
+        { coords: [47.217090, 39.726840], name: 'Набережная Дона',                time: '11:00–12:30', desc: 'Главная прогулочная зона города вдоль берега реки с причалами и ресторанами.', tip: 'Можно взять велосипед напрокат у пристани' },
+        { coords: [47.212652, 39.731034], name: 'Левый берег',                    time: '13:00–15:00', desc: 'Обширная парковая зона с пляжами, беседками и видом на ночной Ростов.', tip: 'Паром от набережной — 50₽, отправление каждые 20 минут' },
+        { coords: [47.234689, 39.659219], name: 'Ботанический сад ЮФУ',          time: '15:30–17:30', desc: 'Один из крупнейших ботанических садов юга России с тысячами видов растений.', tip: 'Вход платный — около 100₽' },
+      ]
+    },
+
+    gastronomy: {
+      title: 'Гастрономический маршрут',
+      duration: '5–7 часов',
+      places: 6,
+      km: '2.5 км',
+      points: [
+        { coords: [47.216824, 39.712173], name: 'Центральный рынок',              time: '09:00–10:30', desc: 'Колоритный рынок с донскими деликатесами: раками, рыбой, сырами и овощами.', tip: 'Попробуйте местного судака и донского рака — лучшие в городе' },
+        { coords: [47.225903, 39.719046], name: 'Пушкинская улица',               time: '11:00–13:00', desc: 'Ресторанная улица Ростова — здесь сосредоточены лучшие заведения города.', tip: 'На обед зайдите в «Грин Хаус» или «Садовое кольцо»' },
+        { coords: [47.226778, 39.745223], name: 'Ресторанный квартал',            time: '13:30–15:00', desc: 'Кластер авторских ресторанов у Театральной площади с кухней народов юга России.', tip: 'Столик лучше бронировать заранее в выходные' },
+        { coords: [47.217090, 39.726842], name: 'Набережная — летние кафе',       time: '15:30–17:30', desc: 'Летние кафе и бары на набережной с видом на Дон и фирменными коктейлями.', tip: 'Попробуйте донское вино местных виноделен' },
+        { coords: [47.216824, 39.712173], name: 'Вечерний рынок',                 time: '18:00–19:00', desc: 'Вечерние лавки рынка с готовой едой, донской выпечкой и уличными блюдами.', tip: 'Чебуреки и пирожки с рыбой — местная классика' },
+        { coords: [47.212652, 39.731034], name: 'Левый берег — ужин',             time: '19:30–21:00', desc: 'Рестораны левого берега с вечерним видом на ночной Ростов и живой музыкой.', tip: 'Заказывайте шашлык из осетра — фирменное блюдо заведений берега' },
+      ]
+    },
+
+    history: {
+      title: 'Исторический маршрут',
+      duration: '6–7 часов',
+      places: 7,
+      km: '4.5 км',
+      points: [
+        { coords: [47.217099, 39.694258], name: 'Железнодорожный вокзал',         time: '09:00–09:30', desc: 'Исторический вокзал 1876 года — первая крупная постройка современного Ростова.', tip: 'Обратите внимание на дореволюционный герб на фасаде' },
+        { coords: [47.225830, 39.732110], name: 'Покровский собор',               time: '10:00–11:00', desc: 'Старейший православный храм города, основанный в 1786 году.', tip: 'Послушайте службу — хор считается одним из лучших в городе' },
+        { coords: [47.226778, 39.745223], name: 'Театральная площадь',            time: '11:30–12:30', desc: 'Исторический центр города — место парадов, ярмарок и собраний XIX века.', tip: 'Найдите табличку с датой основания Ростова на постаменте памятника' },
+        { coords: [47.223729, 39.722343], name: 'Краеведческий музей',            time: '13:00–15:00', desc: 'Богатейшая коллекция по истории донского края от скифов до наших дней.', tip: 'Обязательно посетите зал скифского золота — уникальные экспонаты' },
+        { coords: [47.225903, 39.719046], name: 'Дореволюционная застройка Пушкинской', time: '15:30–16:30', desc: 'Особняки купцов и дворян XIX–XX веков — живая история ростовского купечества.', tip: 'Обратите внимание на номера домов — часть зданий дореволюционные' },
+        { coords: [47.216824, 39.712173], name: 'Старый базар',                   time: '17:00–18:00', desc: 'Место торговли на Дону с XVIII века — здесь зарождался торговый Ростов.', tip: 'Сохранились здания складов XIX века по переулку Журавлёва' },
+        { coords: [47.217090, 39.726840], name: 'Набережная им. Ленина',          time: '18:30–19:30', desc: 'Набережная заложена в 1840-х годах — главный прогулочный променад купеческого города.', tip: 'Закат над Доном с набережной — одно из красивейших мест города' },
+      ]
+    },
+
+    entertainment: {
+      title: 'Развлекательный маршрут',
+      duration: '5–6 часов',
+      places: 6,
+      km: '3.2 км',
+      points: [
+        { coords: [47.221248, 39.710246], name: 'Парк Горького — аттракционы',    time: '10:00–12:00', desc: 'Главный парк развлечений Ростова с аттракционами, колесом обозрения и летней сценой.', tip: 'Колесо обозрения работает до 22:00, виды на город отличные' },
+        { coords: [47.226778, 39.745223], name: 'Театральная площадь',            time: '12:30–13:30', desc: 'Центр городских событий — здесь проходят концерты, фестивали и городские праздники.', tip: 'Проверьте афишу — возможно, сегодня есть мероприятие' },
+        { coords: [47.220590, 39.712832], name: 'Музей современного искусства',   time: '14:00–15:30', desc: 'Современные инсталляции, перформансы и выставки актуального искусства.', tip: 'По четвергам вход бесплатный' },
+        { coords: [47.217090, 39.726842], name: 'Набережная — прокат',            time: '16:00–17:30', desc: 'Прокат велосипедов, самокатов и сегвеев вдоль живописной набережной.', tip: 'Велосипед — 200₽/час, самокат — 150₽/час' },
+        { coords: [47.212652, 39.731034], name: 'Левый берег — пляж',             time: '18:00–20:00', desc: 'Городской пляж с волейбольными площадками, шезлонгами и летними барами.', tip: 'Паром ходит каждые 20 минут, стоимость 50₽' },
+        { coords: [47.217090, 39.726840], name: 'Ночная набережная',              time: '21:00–22:30', desc: 'Вечерняя прогулка по набережной с видом на подсвеченный мост и отражения огней в реке.', tip: 'Лучшее место для финального фото — у Ворошиловского моста' },
+      ]
+    },
+
+    art: {
+      title: 'Культурный маршрут',
+      duration: '5–6 часов',
+      places: 6,
+      km: '3.0 км',
+      points: [
+        { coords: [47.225706, 39.715811], name: 'Музей изобразительных искусств', time: '10:00–12:00', desc: 'Богатейшая коллекция живописи и скульптуры от классики до современного искусства.', tip: 'Обязательно посетите зал передвижников' },
+        { coords: [47.228394, 39.744792], name: 'Театр драмы им. Горького',       time: '12:30–13:30', desc: 'Один из старейших театров России, основан в 1863 году. Здание — памятник конструктивизма.', tip: 'Уточните расписание спектаклей на вечер' },
+        { coords: [47.225903, 39.719046], name: 'Галереи Пушкинской улицы',      time: '14:00–15:30', desc: 'Арт-галереи, мастерские художников и антикварные магазины на главной пешеходной улице.', tip: 'В галерее «Ростов» часто проходят бесплатные вернисажи' },
+        { coords: [47.219355, 39.715552], name: 'Стрит-арт квартал',             time: '16:00–17:00', desc: 'Граффити и муралы ростовских и приезжих художников на стенах исторических зданий.', tip: 'Ищите работы художника Кирилла Кто — они самые интересные' },
+        { coords: [47.217090, 39.726842], name: 'Набережная — скульптуры',       time: '17:30–18:30', desc: 'Скульптурная галерея под открытым небом вдоль набережной Дона.', tip: 'Найдите скульптуру «Купец» — популярное место для фото' },
+        { coords: [47.212652, 39.731034], name: 'Левый берег — арт-пространство', time: '19:00–21:00', desc: 'Летние арт-площадки, open-air концерты и творческие события на левом берегу.', tip: 'По пятницам и субботам здесь обычно живая музыка' },
+      ]
+    },
+  };
+
+  /* стартовые точки */
+  const START_POINTS = {
+    station: {
+      coords: [47.217099, 39.694258],
+      name: 'Железнодорожный вокзал',
+      time: '09:00–09:30',
+      desc: 'Величественный вокзал — образец советского ампира. Отправная точка маршрута.',
+      tip: 'Сфотографируйте главный фасад — лучшее освещение с утра',
+    },
+    center: {
+      coords: [47.226778, 39.745223],
+      name: 'Театральная площадь',
+      time: '09:00–09:30',
+      desc: 'Центральная площадь города — удобная отправная точка для любого маршрута.',
+      tip: 'Здесь всегда можно поймать такси или сесть на маршрутку в любую сторону',
+    },
+    embankment: {
+      coords: [47.217090, 39.726840],
+      name: 'Набережная Дона',
+      time: '09:00–09:30',
+      desc: 'Главная прогулочная набережная — отличная стартовая точка с видом на реку.',
+      tip: 'Утром здесь особенно тихо и свежо — лучшее время для начала прогулки',
+    },
+    park: {
+      coords: [47.221248, 39.710246],
+      name: 'Парк Горького',
+      time: '09:00–09:30',
+      desc: 'Центральный парк города — удобная точка старта в самом сердце Ростова.',
+      tip: 'Рядом есть кафе где можно выпить кофе перед маршрутом',
+    },
+  };
+
+  /* читаю ответы квиза */
+  function getQuizData() {
+    try {
+      return JSON.parse(localStorage.getItem('quiz')) || {};
+    } catch(e) {
+      return {};
+    }
+  }
+
+  /* определяю маршрут по интересам */
+  function selectRoute(interests) {
+    if (!interests || interests.length === 0) return ROUTES.architecture;
+
+    // если один интерес — беру его маршрут
+    const validInterests = interests.filter(i => ROUTES[i]);
+    if (validInterests.length === 1) return ROUTES[validInterests[0]];
+    if (validInterests.length === 0) return ROUTES.architecture;
+
+    const combined = {
+      title: 'Смешанный маршрут',
+      duration: '6–8 часов',
+      places: 0,
+      km: '4.5+ км',
+      points: [],
+    };
+
+    const usedNames = new Set();
+    validInterests.forEach(interest => {
+      const route = ROUTES[interest];
+      let added = 0;
+      for (const point of route.points) {
+        if (!usedNames.has(point.name) && added < 2) {
+          combined.points.push(point);
+          usedNames.add(point.name);
+          added++;
+        }
+      }
+    });
+
+    combined.points = combined.points.slice(0, 7);
+    combined.places = combined.points.length;
+
+    return combined;
+  }
+
+  function updateRouteMeta(route) {
+    const title = document.querySelector('.result-topbar__title');
+    if (title) title.textContent = route.title;
+
+    const items = document.querySelectorAll('.result-meta__item strong');
+    if (items[0]) items[0].textContent = route.duration;
+    if (items[1]) items[1].textContent = route.places + ' мест';
+    if (items[2]) items[2].textContent = '~' + route.km;
+  }
+
+  function updateTimeline(points) {
+    const list = document.querySelector('.timeline-list');
+    if (!list) return;
+
+    list.innerHTML = points.map((p, i) => {
+      const markerClass = i === 0 ? 'timeline-marker--start' :
+                          i === points.length - 1 ? 'timeline-marker--end' : '';
+      const cardClass = i === Math.floor(points.length / 2) ? 'timeline-item--key' : '';
+
+      return `
+        <div class="timeline-item ${cardClass}">
+          <div class="timeline-marker ${markerClass}"><span>${i + 1}</span></div>
+          <div class="timeline-card">
+            <div class="timeline-card__img">
+              <img src="${getPointImage(p.name)}" alt="${p.name}" loading="lazy"/>
+            </div>
+            <div class="timeline-card__body">
+              <div class="timeline-card__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#1a4f8a" stroke-width="1.2"/><path d="M7 4V7.5L9.5 9" stroke="#1a4f8a" stroke-width="1.2" stroke-linecap="round"/></svg>
+                ${p.time}
+              </div>
+              <h4 class="timeline-card__title">${p.name}</h4>
+              <p class="timeline-card__desc">${p.desc}</p>
+              <div class="timeline-card__tip">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#fff7e6" stroke="#f5a623" stroke-width="1.2"/><path d="M7 4.5V7.5" stroke="#f5a623" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="9.5" r="0.8" fill="#f5a623"/></svg>
+                <span>Совет: ${p.tip}</span>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  /* картинки для точек маршрута */
+  const POINT_IMAGES = {
+   'Железнодорожный вокзал':          'img/jd.jpg',
+    'Театральная площадь':             'img/teatral.jpg',
+    'Покровский собор':                'img/pokrov.jpg',
+    'Улица Пушкинская':                'img/pyshk.jpg',
+    'Особняк Маргариты Черновой':      'img/marii.jpg',
+    'Набережная Дона':                 'img/naberezshnaya.jpg',
+    'Парк Горького':                   'img/parkgorkogo.jpg',
+    'Парк имени Горького':             'img/parkgorkogo.jpg',
+    'Парк Горького — аттракционы':     'img/parkgorkogo.jpg',
+    'Левый берег':                     'img/levbereg.jpg',
+    'Левый берег — пляж':              'img/levbereg.jpg',
+    'Левый берег — ужин':              'img/levbereg.jpg',
+    'Левый берег — арт-пространство':  'img/levbereg.jpg',
+    'Ботанический сад ЮФУ':            'https://images.unsplash.com/photo-1714422794298-3984056a8cd2?w=400&q=80',
+    'Центральный рынок':               'img/cr.jpg',
+    'Вечерний рынок':                  'img/cr.jpg',
+    'Старый базар':                    'img/cr.jpg',
+    'Пушкинская улица':                'img/pyshk.jpg',
+    'Дореволюционная застройка Пушкинской': 'img/pyshk.jpg',
+    'Ресторанный квартал':             'https://images.unsplash.com/photo-1677523875460-7be7f031a302?w=400&q=80',
+    'Набережная — летние кафе':        'img/naberezshnaya.jpg',
+    'Набережная — прокат':             'img/naberezshnaya.jpg',
+    'Набережная — скульптуры':         'img/naberezshnaya.jpg',
+    'Набережная им. Ленина':           'img/naberezshnaya.jpg',
+    'Ночная набережная':               'img/naberezshnaya.jpg',
+    'Краеведческий музей':             'img/kraeved.jpg',
+    'Музей изобразительных искусств':  'img/izo.jpg',
+    'Музей современного искусства':    'img/svr.jpg',
+    'Театр драмы им. Горького':        'img/teatr.jpg',
+    'Галереи Пушкинской улицы':        'https://images.unsplash.com/photo-1772012454113-158fdbb9eaac?w=400&q=80',
+    'Стрит-арт квартал':               'img/art.jpg',
+    'Кафе «Дон»':                      'https://images.unsplash.com/photo-1677523875460-7be7f031a302?w=400&q=80',
+    'default':                         'https://images.unsplash.com/photo-1659441629547-7c7c3a440a48?w=400&q=80',
+  };
+
+  function getPointImage(name) {
+    return POINT_IMAGES[name] || POINT_IMAGES['default'];
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
+
+    ymaps.ready(() => {
+      const quiz     = getQuizData();
+      const route    = selectRoute(quiz.interests);
+      const startKey = quiz.start || 'station';
+      let points = [...route.points];
+      const customStart = START_POINTS[startKey];
+      if (customStart) {
+        points[0] = {
+          coords: customStart.coords,
+          name:   customStart.name,
+          time:   customStart.time,
+          desc:   customStart.desc,
+          tip:    customStart.tip,
+        };
+        points = points.filter((p, i) => i === 0 || p.name !== customStart.name);
+      }
+
+      // режим передвижения зависит от бюджета
+      const budget = quiz.budget || 0;
+      const routingMode = budget >= 2 ? 'auto' : 'pedestrian';
+      updateRouteMeta(route);
+      updateTimeline(points);
+
+      const map = new ymaps.Map('yandex-map', {
+        center: [47.220, 39.720],
+        zoom: 13,
+        controls: ['zoomControl', 'fullscreenControl'],
+      });
+
+      // метки
+      points.forEach((point, i) => {
+        const placemark = new ymaps.Placemark(point.coords, {
+          balloonContent: `<b>${point.name}</b><br/>${point.time}`,
+        }, {
+          preset: i === 0 ? 'islands#greenDotIconWithCaption' :
+                  i === points.length - 1 ? 'islands#redDotIconWithCaption' :
+                  'islands#blueDotIconWithCaption',
+          iconCaptionMaxWidth: '200',
+        });
+        map.geoObjects.add(placemark);
+      });
+
+      // линия маршрута
+      const multiRoute = new ymaps.multiRouter.MultiRoute({
+        referencePoints: points.map(p => p.coords),
+        params: { routingMode },
+      }, {
+        boundsAutoApply: true,
+        routeActiveStrokeColor: '#f5a623',
+        routeActiveStrokeWidth: 5,
+        wayPointVisible: false,
+      });
+
+      map.geoObjects.add(multiRoute);
+    });
   });
   </script>
 </body>

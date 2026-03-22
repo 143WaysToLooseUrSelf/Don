@@ -51,6 +51,7 @@ function quizNext() {
     state.quizStep++;
     updateQuizUI();
   } else {
+    saveQuizAnswers();
     startLoadingSequence();
   }
 }
@@ -61,6 +62,23 @@ function quizPrev() {
     state.quizStep--;
     updateQuizUI();
   }
+}
+
+/* сохраняем ответы квиза в localStorage */
+function saveQuizAnswers() {
+  // начальная точка
+  const startInput = document.querySelector('input[name="start"]:checked');
+  const start = startInput ? startInput.value : 'station';
+
+  // бюджет
+  const slider = document.getElementById('budget-slider');
+  const budget = slider ? parseInt(slider.value) : 0;
+
+  // интересы
+  const interestInputs = document.querySelectorAll('input[name="interests"]:checked');
+  const interests = Array.from(interestInputs).map(i => i.value);
+
+  localStorage.setItem('quiz', JSON.stringify({ start, budget, interests }));
 }
 
 /* обновление интерфейса квиза */
